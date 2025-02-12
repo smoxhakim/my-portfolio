@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Enhanced color palette for light mode */
+    --color-primary-50: 238 242 255;
+    --color-primary-100: 224 231 255;
+    --color-primary-200: 199 210 254;
+    --color-primary-300: 165 180 252;
+    --color-primary-400: 129 140 248;
+    --color-primary-500: 99 102 241;
+    --color-primary-600: 79 70 229;
+    --color-primary-700: 67 56 202;
+    --color-primary-800: 55 48 163;
+    --color-primary-900: 49 46 129;
+    
+    /* Refined light mode colors */
+    --color-bg: 252 252 253;
+    --color-text: 17 24 39;
+    --color-muted: 107 114 128;
+    --color-subtle: 249 250 251;
+    --color-border: 229 231 235;
+    --color-card: 255 255 255;
+    
+    /* New accent colors */
+    --color-accent-1: 239 68 68;
+    --color-accent-2: 16 185 129;
+    --color-accent-3: 245 158 11;
+  }
+
+  :root.dark {
+    --color-bg: 15 23 42;
+    --color-text: 248 250 252;
+    --color-muted: 156 163 175;
+    --color-subtle: 30 41 59;
+    --color-border: 51 65 85;
+    --color-card: 30 41 59;
+  }
+
+  body {
+    @apply bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))] antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+    letter-spacing: -0.01em;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+}
+
+@layer components {
+  /* Enhanced navigation styles */
+  .nav-link {
+    @apply px-4 py-2 rounded-lg transition-all duration-200 
+           hover:bg-[rgb(var(--color-subtle))] text-[rgb(var(--color-text))]
+           focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary-400))]
+           font-medium;
+  }
+
+  .nav-link.active {
+    @apply bg-[rgb(var(--color-primary-50))] text-[rgb(var(--color-primary-700))];
+  }
+
+  /* Improved container styles */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-8;
+  }
+
+  /* Enhanced typography */
+  .section-title {
+    @apply text-4xl font-bold tracking-tight mb-4 
+           bg-gradient-to-r from-[rgb(var(--color-primary-700))] to-[rgb(var(--color-primary-500))]
+           bg-clip-text text-transparent;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-[rgb(var(--color-muted))] max-w-2xl mx-auto mb-16
+           leading-relaxed;
+  }
+
+  /* Improved button styles */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-5 py-2.5 
+           text-sm font-medium transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-offset-2 
+           disabled:opacity-60 disabled:cursor-not-allowed
+           gap-2;
+  }
+
+  .btn-primary {
+    @apply bg-[rgb(var(--color-primary-600))] text-white 
+           hover:bg-[rgb(var(--color-primary-700))] 
+           focus:ring-[rgb(var(--color-primary-500))]
+           shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-[rgb(var(--color-subtle))] text-[rgb(var(--color-text))]
+           hover:bg-[rgb(var(--color-border))]
+           focus:ring-[rgb(var(--color-primary-400))]
+           border border-[rgb(var(--color-border))];
+  }
+
+  /* Enhanced card styles */
+  .card {
+    @apply bg-[rgb(var(--color-card))] 
+           border border-[rgb(var(--color-border))] 
+           rounded-xl shadow-sm hover:shadow-md transition-shadow
+           duration-200 overflow-hidden;
+  }
+
+  /* Improved form elements */
+  .input {
+    @apply w-full px-4 py-3 rounded-lg 
+           border border-[rgb(var(--color-border))] 
+           bg-[rgb(var(--color-card))] 
+           focus:outline-none focus:ring-2 
+           focus:ring-[rgb(var(--color-primary-500))]
+           focus:border-transparent
+           placeholder:text-[rgb(var(--color-muted))]
+           transition-all duration-200;
+  }
+
+  /* New utility classes */
+  .gradient-text {
+    @apply bg-gradient-to-r from-[rgb(var(--color-primary-700))] to-[rgb(var(--color-primary-500))]
+           bg-clip-text text-transparent;
+  }
+
+  .hover-card {
+    @apply transform transition-all duration-200
+           hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-sm
+           font-medium bg-[rgb(var(--color-primary-50))] 
+           text-[rgb(var(--color-primary-700))];
+  }
+}
