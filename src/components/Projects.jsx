@@ -61,10 +61,10 @@ const Projects = () => {
               />
               {project.featured && (
                 <div className="absolute top-4 right-4">
-                  <div className="badge">
+                  {/* <div className="badge">
                     <Star className="w-4 h-4 mr-1" />
                     Featured
-                  </div>
+                  </div> */}
                 </div>
               )}
             </div>
