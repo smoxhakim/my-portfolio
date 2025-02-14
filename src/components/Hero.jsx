@@ -31,7 +31,7 @@ const Hero = () => {
         <div className="flex items-center justify-center gap-4 pt-8">
           <motion.a 
             href={resumePDF}
-            download
+            download="Abdelhakim_Joulal_Resume.pdf" 
             className="btn btn-primary"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
