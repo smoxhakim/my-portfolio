@@ -15,7 +15,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             <img
               src={darkMode ? darkLogo : lightLogo }
               alt="SMOX Logo"
-              className="h-20 w-auto"
+              className="h-16 w-auto"
               style={{ 
                 // filter: darkMode ? 'brightness(1)' : 'brightness(0)',
                 transition: 'filter 0.3s ease-in-out'
